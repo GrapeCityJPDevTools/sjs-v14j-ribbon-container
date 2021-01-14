@@ -1,6 +1,47 @@
 export var ribbonConfig = {
   ribbon: [
     {
+      id: "contactUs",
+      text: "自由なカスタマイズ",
+      buttonGroups: [
+        {
+          label:
+            "リボンコンテナでは、リボンの表示だけでなくタブの追加や非表示、ボタンの追加などを自由に行うことが可能です。",
+          commandGroup: {}
+        }
+      ]
+    },
+    {
+      id: "settings",
+      text: "独自のボタン設定",
+      buttonGroups: [
+        {
+          label: "ファイル保存のデモ",
+          commandGroup: {
+            children: [
+              {
+                //direction: "vertical",
+                commands: ["cmdSaveData"]
+              }
+              // {
+              //   direction: "vertical",
+              //   commands: [
+              //     //"spreadSettingScrollBar",
+              //     "test",
+              //     //"spreadSettingCalculation",
+              //     //"spreadSettingTabStrip"
+              //   ]
+              // }
+            ]
+          }
+        }
+        // {
+        //   label: "このタブでは独自に作成したボタンを表示する例を示します。",
+        //   commandGroup: {}
+        // }
+      ]
+    },
+    {
       id: "home",
       text: "ホーム",
       buttonGroups: [
@@ -141,65 +182,54 @@ export var ribbonConfig = {
               }
             ]
           }
-        },
-        {
-          label: "スタイル",
-          thumbnailClass: "ribbon-thumbnail-styles",
-          commandGroup: {
-            commands: [
-              "conditionFormat",
-              "formatTable2",
-              "cellStyles",
-              "cellStates"
-            ]
-          }
-        },
-        {
-          label: "セル",
-          thumbnailClass: "ribbon-thumbnail-cells",
-          commandGroup: {
-            commands: ["cellsInsert", "cellsDelete", "cellsFormat"]
-          }
-        },
-        {
-          label: "編集",
-          thumbnailClass: "ribbon-thumbnail-editing",
-          commandGroup: {
-            children: [
-              {
-                direction: "vertical",
-                children: [
-                  {
-                    commands: ["editingAutoSum", "editingAutoSumList"]
-                  },
-                  {
-                    commands: ["editingFillDown", "editingFillDownList"]
-                  },
-                  {
-                    commands: ["clear", "editingClearAllList"]
-                  }
-                ]
-              },
-              {
-                commands: ["editingSortFilter"]
-              },
-              {
-                commands: ["editingFind"]
-              }
-            ]
-          }
         }
-      ]
-    },
-    {
-      id: "contactUs",
-      text: "自由なカスタマイズ",
-      buttonGroups: [
-        {
-          label:
-            "リボンコンテナでは、リボンの表示だけでなくタブの追加や非表示、ボタンの追加などを自由に行うことが可能です。",
-          commandGroup: {}
-        }
+        // {
+        //   label: "スタイル",
+        //   thumbnailClass: "ribbon-thumbnail-styles",
+        //   commandGroup: {
+        //     commands: [
+        //       "conditionFormat",
+        //       "formatTable2",
+        //       "cellStyles",
+        //       "cellStates"
+        //     ]
+        //   }
+        // },
+        // {
+        //   label: "セル",
+        //   thumbnailClass: "ribbon-thumbnail-cells",
+        //   commandGroup: {
+        //     commands: ["cellsInsert", "cellsDelete", "cellsFormat"]
+        //   }
+        // },
+        // {
+        //   label: "編集",
+        //   thumbnailClass: "ribbon-thumbnail-editing",
+        //   commandGroup: {
+        //     children: [
+        //       {
+        //         direction: "vertical",
+        //         children: [
+        //           {
+        //             commands: ["editingAutoSum", "editingAutoSumList"]
+        //           },
+        //           {
+        //             commands: ["editingFillDown", "editingFillDownList"]
+        //           },
+        //           {
+        //             commands: ["clear", "editingClearAllList"]
+        //           }
+        //         ]
+        //       },
+        //       {
+        //         commands: ["editingSortFilter"]
+        //       },
+        //       {
+        //         commands: ["editingFind"]
+        //       }
+        //     ]
+        //   }
+        // }
       ]
     },
     // {
@@ -452,48 +482,7 @@ export var ribbonConfig = {
     //     }
     //   ]
     // },
-    {
-      id: "settings",
-      text: "独自のボタン設定",
-      buttonGroups: [
-        {
-          label: "ファイル保存のデモ",
-          thumbnailClass: "ribbon-thumbnail-spreadsettings",
-          commandGroup: {
-            children: [
-              {
-                direction: "vertical",
-                commands: ["cmdSaveData"]
-              }
-              // {
-              //   direction: "vertical",
-              //   commands: [
-              //     "spreadSettingScrollBar",
-              //     "spreadSettingCalculation",
-              //     "spreadSettingTabStrip"
-              //   ]
-              // }
-            ]
-          }
-        }
-        // {
-        //   label: "シート",
-        //   thumbnailClass: "ribbon-thumbnail-sheetsettings",
-        //   commandGroup: {
-        //     children: [
-        //       {
-        //         direction: "vertical",
-        //         commands: ["sheetSettingGeneral"]
-        //       },
-        //       {
-        //         direction: "vertical",
-        //         commands: ["sheetSettingGridLine", "sheetSettingHeaders"]
-        //       }
-        //     ]
-        //   }
-        // }
-      ]
-    },
+
     {
       id: "tableDesign",
       text: "テーブル ツール",
