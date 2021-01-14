@@ -8,6 +8,8 @@ import "@grapecity/spread-sheets-designer/styles/gc.spread.sheets.designer.min.c
 import "@grapecity/spread-sheets-designer-resources-ja";
 import * as GC from "@grapecity/spread-sheets-designer";
 
+import { ribbonConfig } from "./ribbonconfig.js";
+
 // コンポーネント初期化
 GC.Spread.Common.CultureManager.culture("ja-jp");
 
@@ -19,7 +21,8 @@ var elemOffButton = document.getElementById("ribboncontaineroff");
 // リボンコンテナの有無
 var ribbonFlag = true;
 // リボンコンテナ
-var designer = new GC.Spread.Sheets.Designer.Designer(elemRibbon);
+var designer = new GC.Spread.Sheets.Designer.Designer(elemRibbon, ribbonConfig);
+
 // SpreadJS
 var spreadspread = new GC.Spread.Sheets.Workbook(elemSpread);
 
