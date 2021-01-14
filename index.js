@@ -19,9 +19,7 @@ var elemOnButton = document.getElementById("ribboncontaineron");
 var elemOffButton = document.getElementById("ribboncontaineroff");
 
 // リボンコンテナの有無
-var ribbonFlag = true;
-// リボンコンテナ
-var designer = new GC.Spread.Sheets.Designer.Designer(elemRibbon, ribbonConfig);
+var ribbonFlag = 1;
 
 ribbonConfig.commandMap = {
   cmdSaveData: {
@@ -32,10 +30,13 @@ ribbonConfig.commandMap = {
     commandName: "cmdSaveData",
     execute: async (context, propertyName, fontItalicChecked) => {
       // customize operator
-      alert("Save data successfully.");
+      alert("データの保存に成功しました");
     }
   }
 };
+
+// リボンコンテナ
+var designer = new GC.Spread.Sheets.Designer.Designer(elemRibbon, ribbonConfig);
 
 // SpreadJS
 var spreadspread = new GC.Spread.Sheets.Workbook(elemSpread);
