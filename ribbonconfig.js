@@ -202,296 +202,296 @@ export var ribbonConfig = {
         }
       ]
     },
-    {
-      id: "insert",
-      text: "挿入",
-      buttonGroups: [
-        {
-          label: "テーブル",
-          thumbnailClass: "ribbon-thumbnail-table",
-          commandGroup: {
-            commands: ["insertTable"]
-          }
-        },
-        {
-          label: "チャート",
-          thumbnailClass: "ribbon-thumbnail-chart",
-          commandGroup: {
-            commands: ["insertChart"]
-          }
-        },
-        {
-          label: "図",
-          thumbnailClass: "ribbon-button-picture",
-          commandGroup: {
-            commands: ["insertPicture"]
-          }
-        },
-        {
-          label: "シェイプ",
-          thumbnailClass: "ribbon-thumbnail-shapes",
-          commandGroup: {
-            commands: ["insertShape"]
-          }
-        },
-        {
-          label: "バーコード",
-          thumbnailClass: "ribbon-thumbnail-barcode",
-          commandGroup: {
-            commands: ["insertBarCode"]
-          }
-        },
-        {
-          label: "ハイパーリンク",
-          thumbnailClass: "ribbon-thumbnail-barcode",
-          commandGroup: {
-            commands: ["insertHyperLink"]
-          }
-        },
-        {
-          label: "スパークライン",
-          thumbnailClass: "ribbon-thumbnail-sparklines",
-          commandGroup: {
-            commands: [
-              "sparklinesLineSparkline",
-              "sparklinesColumnSparkline",
-              "sparklinesWinLossSparkline",
-              "sparklinesPieSparkline",
-              "sparklinesAreaSparkline",
-              "sparklinesScatterSparkline",
-              "sparklinesSpreadsSparkline",
-              "sparklinesStackedSparkline",
-              "sparklinesBoxPlotSparkline",
-              "sparklinesCascadeSparkline",
-              "sparklinesParetoSparkline",
-              "sparklinesBulletSparkline",
-              "sparklinesHBarSparkline",
-              "sparklinesVBarSparkline",
-              "sparklinesVarianceSparkline",
-              "sparklinesMonthSparkline",
-              "sparklinesYearSparkline",
-              "sparklinesRangeBlockSparkline"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      id: "formulas",
-      text: "数式",
-      buttonGroups: [
-        {
-          label: "関数",
-          thumbnailClass: "ribbon-button-insertfunction",
-          commandGroup: {
-            commands: ["insertFunction"]
-          }
-        },
-        {
-          label: "関数ライブラリ",
-          thumbnailClass: "ribbon-thumbnail-functions",
-          commandGroup: {
-            commands: [
-              "formulaAutoSum",
-              "formulaFinancial",
-              "logicalFormula",
-              "formulaText",
-              "formulaDateTime",
-              "formulaLookupReference",
-              "formulaLookupReferenceAllowDynamicArray",
-              "formulaMathTrig",
-              "formulaMathTrigAllowDynamicArray",
-              "moreFunctions"
-            ]
-          }
-        },
-        {
-          label: "名前",
-          thumbnailClass: "ribbon-thumbnail-names",
-          commandGroup: {
-            commands: ["nameManager"]
-          }
-        },
-        {
-          label: "数式の表示",
-          thumbnailClass: "ribbon-thumbnail-functions",
-          commandGroup: {
-            commands: ["showFormulas"]
-          }
-        }
-      ]
-    },
-    {
-      id: "data",
-      text: "データ",
-      buttonGroups: [
-        {
-          label: "ソートとフィルター",
-          thumbnailClass: "ribbon-thumbnail-sortAndFilter",
-          commandGroup: {
-            children: [
-              {
-                direction: "vertical",
-                commands: ["sortAZData", "sortZAData"]
-              },
-              {
-                commands: ["customSortData"]
-              },
-              {
-                type: "separator"
-              },
-              {
-                commands: ["setFilterData"]
-              },
-              {
-                direction: "vertical",
-                commands: ["clearFilterData", "reapplyFilterData"]
-              }
-            ]
-          }
-        },
-        {
-          label: "データツール",
-          thumbnailClass: "ribbon-thumbnail-datatools",
-          commandGroup: {
-            children: [
-              {
-                commands: ["dataValidation", "dataValidationList"]
-              }
-            ]
-          }
-        },
-        {
-          label: "アウトライン",
-          indicator: "indicatorOutline",
-          thumbnailClass: "ribbon-thumbnail-outline",
-          commandGroup: {
-            children: [
-              {
-                commands: ["group", "ungroup", "subtotal"]
-              },
-              {
-                type: "separator"
-              },
-              {
-                direction: "vertical",
-                commands: ["showDetail", "hideDetail"]
-              }
-            ]
-          }
-        },
-        {
-          label: "デザインモード",
-          thumbnailClass: "ribbon-thumbnail-designmode",
-          commandGroup: {
-            children: [
-              {
-                commands: ["templateDesignMode"]
-              },
-              {
-                type: "separator"
-              },
-              {
-                direction: "vertical",
-                commands: ["loadSchema", "saveSchema", "clearBindingPath"]
-              },
-              {
-                type: "separator"
-              },
-              {
-                commands: ["autoGenerateLabel"]
-              }
-            ]
-          }
-        }
-      ]
-    },
-    {
-      id: "view",
-      text: "表示",
-      buttonGroups: [
-        {
-          label: "表示",
-          thumbnailClass: "ribbon-thumbnail-showhide",
-          commandGroup: {
-            children: [
-              {
-                direction: "vertical",
-                commands: ["showHideRowHeader", "showHideColumnHeader"]
-              },
-              {
-                type: "separator"
-              },
-              {
-                direction: "vertical",
-                commands: ["showHideVGridLine", "showHideHGridLine"]
-              },
-              {
-                type: "separator"
-              },
-              {
-                direction: "vertical",
-                commands: ["showHideTabStrip", "showHideNewTab"]
-              }
-            ]
-          }
-        },
-        {
-          label: "ズーム",
-          thumbnailClass: "ribbon-thumbnail-zoom",
-          commandGroup: {
-            commands: ["zoom", "zoomDefault", "zoomSelection"]
-          }
-        },
-        {
-          label: "ウインドウ",
-          thumbnailClass: "ribbon-thumbnail-viewport",
-          commandGroup: {
-            commands: ["ViewportFreezePanes", "unfreezePanes"]
-          }
-        }
-      ]
-    },
+    // {
+    //   id: "insert",
+    //   text: "挿入",
+    //   buttonGroups: [
+    //     {
+    //       label: "テーブル",
+    //       thumbnailClass: "ribbon-thumbnail-table",
+    //       commandGroup: {
+    //         commands: ["insertTable"]
+    //       }
+    //     },
+    //     {
+    //       label: "チャート",
+    //       thumbnailClass: "ribbon-thumbnail-chart",
+    //       commandGroup: {
+    //         commands: ["insertChart"]
+    //       }
+    //     },
+    //     {
+    //       label: "図",
+    //       thumbnailClass: "ribbon-button-picture",
+    //       commandGroup: {
+    //         commands: ["insertPicture"]
+    //       }
+    //     },
+    //     {
+    //       label: "シェイプ",
+    //       thumbnailClass: "ribbon-thumbnail-shapes",
+    //       commandGroup: {
+    //         commands: ["insertShape"]
+    //       }
+    //     },
+    //     {
+    //       label: "バーコード",
+    //       thumbnailClass: "ribbon-thumbnail-barcode",
+    //       commandGroup: {
+    //         commands: ["insertBarCode"]
+    //       }
+    //     },
+    //     {
+    //       label: "ハイパーリンク",
+    //       thumbnailClass: "ribbon-thumbnail-barcode",
+    //       commandGroup: {
+    //         commands: ["insertHyperLink"]
+    //       }
+    //     },
+    //     {
+    //       label: "スパークライン",
+    //       thumbnailClass: "ribbon-thumbnail-sparklines",
+    //       commandGroup: {
+    //         commands: [
+    //           "sparklinesLineSparkline",
+    //           "sparklinesColumnSparkline",
+    //           "sparklinesWinLossSparkline",
+    //           "sparklinesPieSparkline",
+    //           "sparklinesAreaSparkline",
+    //           "sparklinesScatterSparkline",
+    //           "sparklinesSpreadsSparkline",
+    //           "sparklinesStackedSparkline",
+    //           "sparklinesBoxPlotSparkline",
+    //           "sparklinesCascadeSparkline",
+    //           "sparklinesParetoSparkline",
+    //           "sparklinesBulletSparkline",
+    //           "sparklinesHBarSparkline",
+    //           "sparklinesVBarSparkline",
+    //           "sparklinesVarianceSparkline",
+    //           "sparklinesMonthSparkline",
+    //           "sparklinesYearSparkline",
+    //           "sparklinesRangeBlockSparkline"
+    //         ]
+    //       }
+    //     }
+    //   ]
+    // },
+    // {
+    //   id: "formulas",
+    //   text: "数式",
+    //   buttonGroups: [
+    //     {
+    //       label: "関数",
+    //       thumbnailClass: "ribbon-button-insertfunction",
+    //       commandGroup: {
+    //         commands: ["insertFunction"]
+    //       }
+    //     },
+    //     {
+    //       label: "関数ライブラリ",
+    //       thumbnailClass: "ribbon-thumbnail-functions",
+    //       commandGroup: {
+    //         commands: [
+    //           "formulaAutoSum",
+    //           "formulaFinancial",
+    //           "logicalFormula",
+    //           "formulaText",
+    //           "formulaDateTime",
+    //           "formulaLookupReference",
+    //           "formulaLookupReferenceAllowDynamicArray",
+    //           "formulaMathTrig",
+    //           "formulaMathTrigAllowDynamicArray",
+    //           "moreFunctions"
+    //         ]
+    //       }
+    //     },
+    //     {
+    //       label: "名前",
+    //       thumbnailClass: "ribbon-thumbnail-names",
+    //       commandGroup: {
+    //         commands: ["nameManager"]
+    //       }
+    //     },
+    //     {
+    //       label: "数式の表示",
+    //       thumbnailClass: "ribbon-thumbnail-functions",
+    //       commandGroup: {
+    //         commands: ["showFormulas"]
+    //       }
+    //     }
+    //   ]
+    // },
+    // {
+    //   id: "data",
+    //   text: "データ",
+    //   buttonGroups: [
+    //     {
+    //       label: "ソートとフィルター",
+    //       thumbnailClass: "ribbon-thumbnail-sortAndFilter",
+    //       commandGroup: {
+    //         children: [
+    //           {
+    //             direction: "vertical",
+    //             commands: ["sortAZData", "sortZAData"]
+    //           },
+    //           {
+    //             commands: ["customSortData"]
+    //           },
+    //           {
+    //             type: "separator"
+    //           },
+    //           {
+    //             commands: ["setFilterData"]
+    //           },
+    //           {
+    //             direction: "vertical",
+    //             commands: ["clearFilterData", "reapplyFilterData"]
+    //           }
+    //         ]
+    //       }
+    //     },
+    //     {
+    //       label: "データツール",
+    //       thumbnailClass: "ribbon-thumbnail-datatools",
+    //       commandGroup: {
+    //         children: [
+    //           {
+    //             commands: ["dataValidation", "dataValidationList"]
+    //           }
+    //         ]
+    //       }
+    //     },
+    //     {
+    //       label: "アウトライン",
+    //       indicator: "indicatorOutline",
+    //       thumbnailClass: "ribbon-thumbnail-outline",
+    //       commandGroup: {
+    //         children: [
+    //           {
+    //             commands: ["group", "ungroup", "subtotal"]
+    //           },
+    //           {
+    //             type: "separator"
+    //           },
+    //           {
+    //             direction: "vertical",
+    //             commands: ["showDetail", "hideDetail"]
+    //           }
+    //         ]
+    //       }
+    //     },
+    //     {
+    //       label: "デザインモード",
+    //       thumbnailClass: "ribbon-thumbnail-designmode",
+    //       commandGroup: {
+    //         children: [
+    //           {
+    //             commands: ["templateDesignMode"]
+    //           },
+    //           {
+    //             type: "separator"
+    //           },
+    //           {
+    //             direction: "vertical",
+    //             commands: ["loadSchema", "saveSchema", "clearBindingPath"]
+    //           },
+    //           {
+    //             type: "separator"
+    //           },
+    //           {
+    //             commands: ["autoGenerateLabel"]
+    //           }
+    //         ]
+    //       }
+    //     }
+    //   ]
+    // },
+    // {
+    //   id: "view",
+    //   text: "表示",
+    //   buttonGroups: [
+    //     {
+    //       label: "表示",
+    //       thumbnailClass: "ribbon-thumbnail-showhide",
+    //       commandGroup: {
+    //         children: [
+    //           {
+    //             direction: "vertical",
+    //             commands: ["showHideRowHeader", "showHideColumnHeader"]
+    //           },
+    //           {
+    //             type: "separator"
+    //           },
+    //           {
+    //             direction: "vertical",
+    //             commands: ["showHideVGridLine", "showHideHGridLine"]
+    //           },
+    //           {
+    //             type: "separator"
+    //           },
+    //           {
+    //             direction: "vertical",
+    //             commands: ["showHideTabStrip", "showHideNewTab"]
+    //           }
+    //         ]
+    //       }
+    //     },
+    //     {
+    //       label: "ズーム",
+    //       thumbnailClass: "ribbon-thumbnail-zoom",
+    //       commandGroup: {
+    //         commands: ["zoom", "zoomDefault", "zoomSelection"]
+    //       }
+    //     },
+    //     {
+    //       label: "ウインドウ",
+    //       thumbnailClass: "ribbon-thumbnail-viewport",
+    //       commandGroup: {
+    //         commands: ["ViewportFreezePanes", "unfreezePanes"]
+    //       }
+    //     }
+    //   ]
+    // },
     {
       id: "settings",
-      text: "設定",
+      text: "独自のボタン設定",
       buttonGroups: [
         {
-          label: "Spread 設定",
+          label: "ファイル保存のデモ",
           thumbnailClass: "ribbon-thumbnail-spreadsettings",
           commandGroup: {
             children: [
               {
                 direction: "vertical",
-                commands: ["spreadSettingGeneral"]
-              },
-              {
-                direction: "vertical",
-                commands: [
-                  "spreadSettingScrollBar",
-                  "spreadSettingCalculation",
-                  "spreadSettingTabStrip"
-                ]
+                commands: ["cmdSaveData"]
               }
-            ]
-          }
-        },
-        {
-          label: "シート",
-          thumbnailClass: "ribbon-thumbnail-sheetsettings",
-          commandGroup: {
-            children: [
-              {
-                direction: "vertical",
-                commands: ["sheetSettingGeneral"]
-              },
-              {
-                direction: "vertical",
-                commands: ["sheetSettingGridLine", "sheetSettingHeaders"]
-              }
+              // {
+              //   direction: "vertical",
+              //   commands: [
+              //     "spreadSettingScrollBar",
+              //     "spreadSettingCalculation",
+              //     "spreadSettingTabStrip"
+              //   ]
+              // }
             ]
           }
         }
+        // {
+        //   label: "シート",
+        //   thumbnailClass: "ribbon-thumbnail-sheetsettings",
+        //   commandGroup: {
+        //     children: [
+        //       {
+        //         direction: "vertical",
+        //         commands: ["sheetSettingGeneral"]
+        //       },
+        //       {
+        //         direction: "vertical",
+        //         commands: ["sheetSettingGridLine", "sheetSettingHeaders"]
+        //       }
+        //     ]
+        //   }
+        // }
       ]
     },
     {
