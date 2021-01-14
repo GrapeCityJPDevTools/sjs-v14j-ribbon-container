@@ -819,6 +819,7 @@ export var ribbonConfig = {
     }
   ],
   contextMenu: [
+    "customContextMenu",
     "contextMenuCut",
     "contextMenuCopy",
     "contextMenuPaste",

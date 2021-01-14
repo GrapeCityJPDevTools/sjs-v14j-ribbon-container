@@ -33,6 +33,14 @@ ribbonConfig.commandMap = {
       // customize operator
       alert("データの保存に成功しました");
     }
+  },
+  customContextMenu: {
+    text: "カスタムメニュー",
+    commandName: "customContextmenu",
+    execute: async (context, propertyName, fontItalicChecked) => {
+      // customize operator
+      alert("カスタムコンテキストメニューが実行されました");
+    }
   }
 };
 
