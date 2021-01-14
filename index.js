@@ -42,29 +42,30 @@ var designer = new GC.Spread.Sheets.Designer.Designer(elemRibbon, ribbonConfig);
 var spreadspread = new GC.Spread.Sheets.Workbook(elemSpread);
 
 function setSpread(flag) {
-  if (flag == true) {
+  if (flag == 1) {
     elemRibbon.style.visibility = "visible";
     elemRibbon.style.display = "";
 
     elemSpread.style.display = "none";
     elemSpread.style.visibility = "hidden";
-  } else {
+  } else if (flag == 2) {
     elemRibbon.style.visibility = "hidden";
     elemRibbon.style.display = "none";
 
     elemSpread.style.display = "";
     elemSpread.style.visibility = "visible";
+  } else {
   }
 }
 
-setSpread(true);
+setSpread(1);
 
 elemOnButton.addEventListener("click", function() {
-  ribbonFlag = true;
+  ribbonFlag = 1;
   setSpread(ribbonFlag);
 });
 
 elemOffButton.addEventListener("click", function() {
-  ribbonFlag = false;
+  ribbonFlag = 2;
   setSpread(ribbonFlag);
 });
