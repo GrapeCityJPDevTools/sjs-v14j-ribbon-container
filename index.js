@@ -44,14 +44,16 @@ ribbonConfig.commandMap = {
   }
 };
 
+// SpreadJS
+var spread = new GC.Spread.Sheets.Workbook(elemSpread);
+
 // リボンコンテナ
 var designer = new GC.Spread.Sheets.Designer.Designer(elemRibbon);
 //var designer = new GC.Spread.Sheets.Designer.Designer(elemRibbon, ribbonConfig);
+var designerSpread = designer.getWorkbook();
+var designerSheet = designerSpread.getActiveSheet();
 
 var defaultConfig = GC.Spread.Sheets.Designer.DefaultConfig;
-
-// SpreadJS
-var spreadspread = new GC.Spread.Sheets.Workbook(elemSpread);
 
 function setSpread(flag) {
   if (flag == 1) {
@@ -62,6 +64,7 @@ function setSpread(flag) {
     elemSpread.style.visibility = "hidden";
 
     designer.setConfig(defaultConfig);
+    designerSheet.reset();
   } else if (flag == 2) {
     elemRibbon.style.visibility = "hidden";
     elemRibbon.style.display = "none";
@@ -76,6 +79,18 @@ function setSpread(flag) {
 
     elemSpread.style.display = "none";
     elemSpread.style.visibility = "hidden";
+
+    designerSheet.setValue(
+      0,
+      0,
+      "リボンとコンテキストメニューのカスタムが有効になっています。"
+    );
+    designerSheet.setValue(1, 0, "コンテキストメニューを開き、");
+    designerSheet.setValue(
+      2,
+      0,
+      "独自に実装メニュー項目「カスタムメニュー」の動作をご確認ください。"
+    );
   }
 }
 
