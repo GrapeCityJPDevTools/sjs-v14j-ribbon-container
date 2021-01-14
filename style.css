@@ -56,3 +56,8 @@ input[type="button"] {
   background: #0f739a;
   color: white;
 }
+
+.cmdSaveData {
+  background-image: url("./saveData.png");
+  background-size: 35px 35px;
+}

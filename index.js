@@ -23,6 +23,20 @@ var ribbonFlag = true;
 // リボンコンテナ
 var designer = new GC.Spread.Sheets.Designer.Designer(elemRibbon, ribbonConfig);
 
+ribbonConfig.commandMap = {
+  cmdSaveData: {
+    title: "Save data to server",
+    text: "保存",
+    iconClass: "cmdSaveData",
+    bigButton: "true",
+    commandName: "cmdSaveData",
+    execute: async (context, propertyName, fontItalicChecked) => {
+      // customize operator
+      alert("Save data successfully.");
+    }
+  }
+};
+
 // SpreadJS
 var spreadspread = new GC.Spread.Sheets.Workbook(elemSpread);
 
