@@ -1,0 +1,58 @@
+body {
+  background-color: #eae8da;
+  color: #2f2f2f;
+}
+
+/* SpreadJSコンテナDOMサイズ設定 */
+div#spreadHost {
+  width: 790px;
+  height: 450px;
+  border: 1px solid darkgray;
+}
+
+/* リボンコンテナDOMサイズ設定 */
+div#ribbonHost {
+  width: 790px;
+  height: 550px;
+  border: 1px solid darkgray;
+}
+
+input[type="button"] {
+  /* input要素のうちtype属性値がbuttonのものに対して装飾 */
+  border: 1px solid darkgray;
+  width: 265px;
+  height: 55px;
+  margin-top: 5px;
+  margin-left: 2px;
+  margin-right: 5px;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.btn-flat-border {
+  display: inline-block;
+  text-decoration: none;
+  background: #f2f2f2;
+  color: #2f2f2f;
+  border-radius: 3px;
+  transition: 0.4s;
+}
+
+.btn-flat-border:hover {
+  background: #c94475;
+  color: white;
+}
+
+.btn-flat-border-cell {
+  display: inline-block;
+  text-decoration: none;
+  background: #f2f2f2;
+  color: #2f2f2f;
+  border-radius: 3px;
+  transition: 0.4s;
+}
+
+.btn-flat-border-cell:hover {
+  background: #0f739a;
+  color: white;
+}
