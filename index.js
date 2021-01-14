@@ -17,6 +17,7 @@ var elemRibbon = document.getElementById("ribbonHost");
 var elemSpread = document.getElementById("spreadHost");
 var elemOnButton = document.getElementById("ribboncontaineron");
 var elemOffButton = document.getElementById("ribboncontaineroff");
+var elemCustomButton = document.getElementById("ribboncontainercustom");
 
 // リボンコンテナの有無
 var ribbonFlag = 1;
@@ -36,7 +37,10 @@ ribbonConfig.commandMap = {
 };
 
 // リボンコンテナ
-var designer = new GC.Spread.Sheets.Designer.Designer(elemRibbon, ribbonConfig);
+var designer = new GC.Spread.Sheets.Designer.Designer(elemRibbon);
+//var designer = new GC.Spread.Sheets.Designer.Designer(elemRibbon, ribbonConfig);
+
+var defaultConfig = GC.Spread.Sheets.Designer.DefaultConfig;
 
 // SpreadJS
 var spreadspread = new GC.Spread.Sheets.Workbook(elemSpread);
@@ -48,6 +52,8 @@ function setSpread(flag) {
 
     elemSpread.style.display = "none";
     elemSpread.style.visibility = "hidden";
+
+    designer.setConfig(defaultConfig);
   } else if (flag == 2) {
     elemRibbon.style.visibility = "hidden";
     elemRibbon.style.display = "none";
@@ -55,6 +61,13 @@ function setSpread(flag) {
     elemSpread.style.display = "";
     elemSpread.style.visibility = "visible";
   } else {
+    designer.setConfig(ribbonConfig);
+
+    elemRibbon.style.visibility = "visible";
+    elemRibbon.style.display = "";
+
+    elemSpread.style.display = "none";
+    elemSpread.style.visibility = "hidden";
   }
 }
 
@@ -67,5 +80,10 @@ elemOnButton.addEventListener("click", function() {
 
 elemOffButton.addEventListener("click", function() {
   ribbonFlag = 2;
+  setSpread(ribbonFlag);
+});
+
+elemCustomButton.addEventListener("click", function() {
+  ribbonFlag = 3;
   setSpread(ribbonFlag);
 });
