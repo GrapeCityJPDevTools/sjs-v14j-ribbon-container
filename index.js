@@ -1,27 +1,26 @@
-// Import stylesheets
-import "./style.css";
-import "./license.js";
+/****************************************
+ *  インポート
+ ****************************************/
 
-// Spread.Sheets関連モジュールのインポート
+// スタイル
+import "./style.css";
+// ライセンス
+import "./license.js";
+// SpreadJS関連モジュール
 import "@grapecity/spread-sheets/styles/gc.spread.sheets.excel2013white.css";
 import "@grapecity/spread-sheets-designer/styles/gc.spread.sheets.designer.min.css";
 import "@grapecity/spread-sheets-designer-resources-ja";
 import * as GC from "@grapecity/spread-sheets-designer";
-
+// リボンコンテナのカスタム情報
 import { ribbonConfig } from "./ribbonconfig.js";
 
 // コンポーネント初期化
 GC.Spread.Common.CultureManager.culture("ja-jp");
 
-var elemRibbon = document.getElementById("ribbonHost");
-var elemSpread = document.getElementById("spreadHost");
-var elemOnButton = document.getElementById("ribboncontaineron");
-var elemOffButton = document.getElementById("ribboncontaineroff");
-var elemCustomButton = document.getElementById("ribboncontainercustom");
-
-// リボンコンテナの有無
-var ribbonFlag = 1;
-
+/****************************************
+ *  リボンコンテナのカスタム処理
+ ****************************************/
+// コマンドの作成
 ribbonConfig.commandMap = {
   cmdSaveData: {
     title: "Save data to server",
@@ -44,49 +43,101 @@ ribbonConfig.commandMap = {
   }
 };
 
+/****************************************
+ *  処理内でグローバルに利用する変数の定義
+ ****************************************/
+
+// ページ内のDOM要素
+var elemRibbon = document.getElementById("ribbonHost");
+var elemSpread = document.getElementById("spreadHost");
+var elemOnButton = document.getElementById("ribboncontaineron");
+var elemOffButton = document.getElementById("ribboncontaineroff");
+var elemCustomButton = document.getElementById("ribboncontainercustom");
+
+// 表示モード（1:SpreadJSを単体表示 2:リボンコンテナを表示 3:カスタムしたリボンコンテナを表示）
+var ribbonFlag = 1;
+
 // SpreadJS
 var spread = new GC.Spread.Sheets.Workbook(elemSpread);
-
 // リボンコンテナ
-var designer = new GC.Spread.Sheets.Designer.Designer(elemRibbon);
-//var designer = new GC.Spread.Sheets.Designer.Designer(elemRibbon, ribbonConfig);
-var designerSpread = designer.getWorkbook();
-var designerSheet = designerSpread.getActiveSheet();
-
+var ribbonContainer = new GC.Spread.Sheets.Designer.Designer(elemRibbon);
+var ribbonContainerSpread = ribbonContainer.getWorkbook();
+var ribbonContainerSheet = ribbonContainerSpread.getActiveSheet();
+// リボンコンテナ設定の規定値
 var defaultConfig = GC.Spread.Sheets.Designer.DefaultConfig;
 
-function setSpread(flag) {
+/****************************************
+ *  DOM要素の表示処理
+ *
+ *  @param  {Object} elem
+ *  表示するDOM情報
+ *
+ *  @return  {Void}
+ ****************************************/
+function showElement(elem) {
+  elem.style.visibility = "visible";
+  elem.style.display = "";
+}
+/****************************************
+ *  DOM要素の非表示処理
+ *
+ *  @param  {Object} elem
+ *  非表示にするDOM情報
+ *
+ *  @return  {Void}
+ ****************************************/
+function hideElement(elem) {
+  elem.style.display = "none";
+  elem.style.visibility = "hidden";
+}
+/****************************************
+ *  リボンコンテナの表示処理
+ *
+ *  @return  {Void}
+ ****************************************/
+function showRibbonContainer() {
+  showElement(elemRibbon);
+  hideElement(elemSpread);
+}
+/****************************************
+ *  SpreadJS単体の表示処理
+ *
+ *  @return  {Void}
+ ****************************************/
+function showSpread() {
+  showElement(elemSpread);
+  hideElement(elemRibbon);
+}
+/****************************************
+ *  画面の表示処理
+ *
+ *  @param  {Object} flag
+ *  表示モードフラグ
+ *
+ *  @return  {Void}
+ ****************************************/
+function display(flag) {
   if (flag == 1) {
-    elemRibbon.style.visibility = "visible";
-    elemRibbon.style.display = "";
-
-    elemSpread.style.display = "none";
-    elemSpread.style.visibility = "hidden";
-
-    designer.setConfig(defaultConfig);
-    designerSheet.reset();
+    // リボンコンテナの表示
+    showRibbonContainer();
+    ribbonContainer.setConfig(defaultConfig);
+    ribbonContainerSheet.reset();
   } else if (flag == 2) {
-    elemRibbon.style.visibility = "hidden";
-    elemRibbon.style.display = "none";
-
-    elemSpread.style.display = "";
-    elemSpread.style.visibility = "visible";
+    // SpreadJS単体の表示
+    showSpread();
   } else {
-    designer.setConfig(ribbonConfig);
+    // カスタムしたリボンコンテナの表示
+    ribbonContainer.setConfig(ribbonConfig);
 
-    elemRibbon.style.visibility = "visible";
-    elemRibbon.style.display = "";
+    showRibbonContainer();
 
-    elemSpread.style.display = "none";
-    elemSpread.style.visibility = "hidden";
-
-    designerSheet.setValue(
+    ribbonContainerSheet.setValue(
       0,
       0,
       "リボンとコンテキストメニューのカスタムが有効になっています。"
     );
-    designerSheet.setValue(1, 0, "コンテキストメニューを開き、");
-    designerSheet.setValue(
+    ribbonContainerSheet.setValue(1, 0, "コンテキストメニューを開き、");
+    ribbonContainerSheet.setValue(
       2,
       0,
       "独自に実装メニュー項目「カスタムメニュー」の動作をご確認ください。"
@@ -94,19 +145,26 @@ function setSpread(flag) {
   }
 }
 
-setSpread(1);
+display(1);
 
+/****************************************
+ *  ボタン押下時の処理
+ ****************************************/
+
+//「リボンコンテナを有効にする」ボタン押下時の処理
 elemOnButton.addEventListener("click", function() {
   ribbonFlag = 1;
-  setSpread(ribbonFlag);
+  display(ribbonFlag);
 });
 
+//「リボンコンテナを無効にする」ボタン押下時の処理
 elemOffButton.addEventListener("click", function() {
   ribbonFlag = 2;
-  setSpread(ribbonFlag);
+  display(ribbonFlag);
 });
 
+//「コンテナのカスタマイズ例を見る」ボタン押下時の処理
 elemCustomButton.addEventListener("click", function() {
   ribbonFlag = 3;
-  setSpread(ribbonFlag);
+  display(ribbonFlag);
 });
