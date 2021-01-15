@@ -142,6 +142,7 @@ function display(flag) {
       0,
       "独自に実装したメニュー項目「カスタムメニュー」の動作をご確認ください。"
     );
+    ribbonContainerSheet.setActiveCell(0, 0);
   }
 }
 
