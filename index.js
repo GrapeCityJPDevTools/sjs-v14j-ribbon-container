@@ -118,19 +118,14 @@ function showSpread() {
  ****************************************/
 function display(flag) {
   if (flag == 1) {
+    ribbonContainerSheet.reset();
     // リボンコンテナの表示
     showRibbonContainer();
     ribbonContainer.setConfig(defaultConfig);
-    ribbonContainerSheet.reset();
   } else if (flag == 2) {
     // SpreadJS単体の表示
     showSpread();
   } else {
-    // カスタムしたリボンコンテナの表示
-    ribbonContainer.setConfig(ribbonConfig);
-
-    showRibbonContainer();
-
     ribbonContainerSheet.setValue(
       0,
       0,
@@ -143,6 +138,10 @@ function display(flag) {
       "独自に実装したメニュー項目「カスタムメニュー」の動作をご確認ください。"
     );
     ribbonContainerSheet.setActiveCell(0, 0);
+
+    // カスタムしたリボンコンテナの表示
+    ribbonContainer.setConfig(ribbonConfig);
+    showRibbonContainer();
   }
 }
 
