@@ -140,7 +140,7 @@ function display(flag) {
     ribbonContainerSheet.setValue(
       2,
       0,
-      "独自に実装メニュー項目「カスタムメニュー」の動作をご確認ください。"
+      "独自に実装したメニュー項目「カスタムメニュー」の動作をご確認ください。"
     );
   }
 }
